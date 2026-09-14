@@ -9,4 +9,12 @@ function calculateOrder() {
     //    - Order number
     //    - Quantity
     //    - Total cost (format to 2 decimal places)
+let orderNumber = document.getElementById('orderNumber').value;
+let quantity = parseInt(document.getElementById('quantity').value);
+
+let totalCost = 2.45 * quantity;
+
+document.getElementById('displayOrderNumber').textContent = orderNumber;
+document.getElementById('displayQuantity').textContent = quantity;
+document.getElementById('totalCost').textContent = totalCost
 }
