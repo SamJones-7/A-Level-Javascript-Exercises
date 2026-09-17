@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to calculate the restaurant bill
 function calculateBill() {
-    let groupSize = diners + kidsCount;
     let serviceCharge = 1;
     let foodDiscount = 1;
     let drinksDiscount = 1;
@@ -25,6 +24,8 @@ function calculateBill() {
     let day = document.getElementById('day').value;
     let time = document.getElementById('time').value;
     let loyaltyCard = document.getElementById('loyaltyCard').value;
+
+    let groupSize = diners + kidsCount;
     // TODO: Calculate service charge based on group size
     // 1-4: No mandatory charge
     // 5-8: 10%
@@ -73,8 +74,13 @@ function calculateBill() {
     }
     
     // TODO: Calculate subtotal
-    
+    let subtotal = foodTotal + drinksTotal;
+    document.getElementById('subtotal').textContent = ('Subtotal: ' + subtotal);
     // TODO: Create breakdown of all discounts applied
-    
+    document.getElementById('discounts').textContent = ('Discounts: ' + ((foodDiscount * drinksDiscount * totalDiscount * loyaltyCardDiscount) * 100 - 100) + '%');
+    document.getElementById('serviceCharge').textContent = ('Service charge: ' + (serviceCharge * 100 - 100) + '%');
     // TODO: Calculate and display final total
+    foodTotal *= foodDiscount * mainDiscount;
+    drinksTotal *= drinksDiscount;
+    finalTotal = 
 }
