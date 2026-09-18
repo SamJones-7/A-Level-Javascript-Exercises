@@ -75,12 +75,13 @@ function calculateBill() {
     
     // TODO: Calculate subtotal
     let subtotal = foodTotal + drinksTotal;
-    document.getElementById('subtotal').textContent = ('Subtotal: ' + subtotal);
+    document.getElementById('subtotal').textContent = ('Subtotal: £' + subtotal);
     // TODO: Create breakdown of all discounts applied
     document.getElementById('discounts').textContent = ('Discounts: ' + ((foodDiscount * drinksDiscount * totalDiscount * loyaltyCardDiscount) * 100 - 100) + '%');
     document.getElementById('serviceCharge').textContent = ('Service charge: ' + (serviceCharge * 100 - 100) + '%');
     // TODO: Calculate and display final total
     foodTotal *= foodDiscount * mainDiscount;
     drinksTotal *= drinksDiscount;
-    finalTotal = 
+    finalTotal = (foodTotal + drinksTotal) * totalDiscount * loyaltyCardDiscount * serviceCharge;
+    document.getElementById('finalTotal').textContent = ('Grand total: £' + finalTotal);
 }
