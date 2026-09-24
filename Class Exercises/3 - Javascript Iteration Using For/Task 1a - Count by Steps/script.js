@@ -17,6 +17,9 @@ function generateSequence() {
 
     // Check if step is positive
     // Check if end is greater than start
+    if (step >= 0 && end > start) {
+        output.innerHTML = "Numbers are valid"
+    }
     
     // TODO: Create array to store sequence
     let sequence = [];
